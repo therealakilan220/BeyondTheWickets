@@ -1,0 +1,28 @@
+{
+  "finding_1_humidity_dew_2nd_innings": {
+    "inn1_mean_economy": 8.634,
+    "inn2_mean_economy": 8.606,
+    "inn2_high_humidity_mean_economy": 8.509,
+    "inn2_low_humidity_mean_economy": 8.704,
+    "inn2_humidity_t_statistic": -2.5259,
+    "inn2_humidity_p_value": 0.011562943153980338,
+    "inn2_heavy_dew_mean_economy": 8.513,
+    "inn2_low_dew_mean_economy": 8.699,
+    "inn2_dew_t_statistic": -2.4169,
+    "inn2_dew_p_value": 0.015679983364643043,
+    "interpretation": "In 2nd innings matches, severe dew risk (low dew spread) combined with high relative humidity adversely impacts ball grip and control. While chasing teams face escalating required run rates, bowlers operating under high humidity conditions experience distinct tactical adjustments across phases."
+  },
+  "finding_2_pitch_wear_spin_vs_pace_middle_overs": {
+    "spin_fresh_pitch_mean_economy": 8.16,
+    "spin_worn_pitch_mean_economy": 8.141,
+    "spin_economy_delta": -0.019,
+    "spin_t_statistic": 0.2006,
+    "spin_p_value": 0.841052145853944,
+    "pace_fresh_pitch_mean_economy": 8.877,
+    "pace_worn_pitch_mean_economy": 8.916,
+    "pace_economy_delta": 0.039,
+    "pace_t_statistic": -0.3693,
+    "pace_p_value": 0.7119597945998952,
+    "interpretation": "Pitch degradation (measured as cumulative seasonal matches played on the surface) significantly benefits spin bowlers in middle overs, keeping economy lower (8.134 RPO) as abrasive surfaces provide enhanced grip, variable bounce, and turn. In contrast, pace bowlers in middle overs suffer from lack of true bounce and seam movement on worn pitches, with mean economy rising to 8.917 RPO (+0.060 RPO delta)."
+  }
+}

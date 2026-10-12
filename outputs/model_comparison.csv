@@ -1,0 +1,11 @@
+Target,Model,Val_RMSE,Val_MAE,Val_R2,Test_RMSE,Test_MAE,Test_R2,RMSE,MAE,R2
+economy_rate,Linear Regression,3.0197,2.2815,0.0123,3.6585,2.7134,-0.0988,3.6585,2.7134,-0.0988
+economy_rate,Random Forest,2.9708,2.2722,0.044,3.576,2.6645,-0.0499,3.576,2.6645,-0.0499
+economy_rate,XGBoost,3.0784,2.3259,-0.0265,3.603,2.6908,-0.0658,3.603,2.6908,-0.0658
+economy_rate,LightGBM,2.9985,2.2741,0.0261,3.6001,2.6839,-0.064,3.6001,2.6839,-0.064
+economy_rate,EBM (Explainable Boosting),3.3075,2.5146,-0.185,3.6721,2.7572,-0.107,3.6721,2.7572,-0.107
+boundary_frequency,Linear Regression,0.6448,0.4835,0.0498,0.7717,0.5692,-0.03,0.7717,0.5692,-0.03
+boundary_frequency,Random Forest,0.6384,0.4857,0.0688,0.7586,0.5621,0.0045,0.7586,0.5621,0.0045
+boundary_frequency,XGBoost,0.6584,0.4968,0.0094,0.7613,0.5635,-0.0026,0.7613,0.5635,-0.0026
+boundary_frequency,LightGBM,0.648,0.4855,0.0404,0.7609,0.5638,-0.0014,0.7609,0.5638,-0.0014
+boundary_frequency,EBM (Explainable Boosting),0.7141,0.5359,-0.1654,0.7721,0.5741,-0.0312,0.7721,0.5741,-0.0312
