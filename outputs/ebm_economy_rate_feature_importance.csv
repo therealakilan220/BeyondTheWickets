@@ -1,0 +1,469 @@
+term_index,term_tuple,feature_name,is_interaction,importance_score
+1,[1],powerplay_balls_ratio,False,0.09868311193132355
+60,[60],venue_Mangaung Oval,False,0.09601995858040836
+48,[48],venue_Diamond Oval,False,0.07222863005720273
+0,[0],innings,False,0.06854962530683897
+70,[70],venue_Sheikh Zayed Cricket Stadium,False,0.06681864356149791
+74,[74],venue_Wanderers Stadium,False,0.06661884145514614
+16,[16],innings_pitch_wear,False,0.0644632374208492
+47,[47],venue_Buffalo Park,False,0.0595865430487092
+52,[52],venue_Green Park Stadium,False,0.059207357431220936
+73,[73],venue_Vidarbha Cricket Association Stadium,False,0.05741812596321616
+71,[71],venue_St George's Park,False,0.05280597421144188
+10,[10],relative_humidity,False,0.05250619747997467
+12,[12],dew_spread,False,0.050815500774090354
+15,[15],pitch_degradation_proxy,False,0.05038391779369982
+3,[3],death_balls_ratio,False,0.049121809113788856
+54,[54],venue_Holkar Cricket Stadium,False,0.045351886207293184
+46,[46],venue_Brabourne Stadium,False,0.042705851256432996
+9,[9],temperature,False,0.04248323146101142
+63,[63],venue_Newlands Cricket Ground,False,0.04028336486565182
+53,[53],venue_Himachal Pradesh Cricket Association Stadium,False,0.03810936435207186
+4,[4],bowler_career_economy,False,0.037827559174038405
+11,[11],dew_point,False,0.03705801283870125
+164,"[3, 47]",death_balls_ratio x venue_Buffalo Park,True,0.036899223118271075
+5,[5],bowler_career_boundary_freq,False,0.03512299893016547
+50,[50],venue_Dubai International Cricket Stadium,False,0.03371728853934963
+43,[43],venue_ACA-VDCA Cricket Stadium,False,0.03367524660813047
+2,[2],middle_balls_ratio,False,0.03349874060702671
+75,[75],venue_Wankhede Stadium,False,0.033342995315289795
+56,[56],venue_Kingsmead,False,0.032725187486056996
+57,[57],venue_M Chinnaswamy Stadium,False,0.031939079715567975
+69,[69],venue_Sharjah Cricket Stadium,False,0.030913179857590053
+7,[7],opponent_avg_runs_per_over,False,0.0307669962825688
+13,[13],wind_speed,False,0.030711104815595695
+40,[40],opponent_team_Rising Pune Supergiants,False,0.029354093707923218
+58,[58],"venue_MA Chidambaram Stadium, Chepauk",False,0.028357682701788598
+62,[62],venue_Nehru Stadium,False,0.02619940653411052
+442,"[17, 45]",bowling_team_Chennai Super Kings x venue_Barabati Stadium,True,0.024940149741838547
+448,"[23, 53]",bowling_team_Mumbai Indians x venue_Himachal Pradesh Cricket Association Stadium,True,0.023437342251794644
+20,[20],bowling_team_Gujarat Lions,False,0.022992965541538027
+37,[37],opponent_team_Pune Warriors,False,0.022288810064917678
+110,"[1, 48]",powerplay_balls_ratio x venue_Diamond Oval,True,0.021346167187144143
+27,[27],bowling_team_Rising Pune Supergiants,False,0.02134419409330347
+55,[55],venue_JSCA International Stadium Complex,False,0.020451850395147964
+464,"[39, 63]",opponent_team_Rajasthan Royals x venue_Newlands Cricket Ground,True,0.02022565034778091
+314,"[8, 46]",venue_historical_avg_economy x venue_Brabourne Stadium,True,0.02008964941752021
+444,"[18, 75]",bowling_team_Deccan Chargers x venue_Wankhede Stadium,True,0.01957203229989531
+163,"[3, 46]",death_balls_ratio x venue_Brabourne Stadium,True,0.019272533198536126
+142,"[2, 73]",middle_balls_ratio x venue_Vidarbha Cricket Association Stadium,True,0.01866665889926617
+220,"[5, 16]",bowler_career_boundary_freq x innings_pitch_wear,True,0.018447076809245278
+8,[8],venue_historical_avg_economy,False,0.018294308281464267
+6,[6],bowler_strike_rate,False,0.017967876562792605
+180,"[4, 16]",bowler_career_economy x innings_pitch_wear,True,0.017945915645651404
+23,[23],bowling_team_Mumbai Indians,False,0.017857698103481534
+108,"[1, 34]",powerplay_balls_ratio x opponent_team_Kochi Tuskers Kerala,True,0.01784173412656117
+80,"[0, 4]",innings x bowler_career_economy,True,0.01746638492124897
+105,"[1, 21]",powerplay_balls_ratio x bowling_team_Kochi Tuskers Kerala,True,0.01740803457166385
+111,"[1, 53]",powerplay_balls_ratio x venue_Himachal Pradesh Cricket Association Stadium,True,0.017279263926309088
+45,[45],venue_Barabati Stadium,False,0.017154640338766645
+85,"[0, 11]",innings x dew_point,True,0.017124469533903102
+458,"[35, 66]",opponent_team_Kolkata Knight Riders x venue_Saurashtra Cricket Association Stadium,True,0.017066230766941297
+68,[68],venue_Shaheed Veer Narayan Singh International Cricket Stadium,False,0.01679814216764557
+81,"[0, 5]",innings x bowler_career_boundary_freq,True,0.016634424500135313
+450,"[24, 57]",bowling_team_Pune Warriors x venue_M Chinnaswamy Stadium,True,0.016361319027929963
+166,"[3, 62]",death_balls_ratio x venue_Nehru Stadium,True,0.016353597704545343
+18,[18],bowling_team_Deccan Chargers,False,0.01606060716598621
+462,"[38, 70]",opponent_team_Punjab Kings x venue_Sheikh Zayed Cricket Stadium,True,0.015698774588232274
+141,"[2, 60]",middle_balls_ratio x venue_Mangaung Oval,True,0.015428960100397057
+113,"[1, 56]",powerplay_balls_ratio x venue_Kingsmead,True,0.015210196464689905
+446,"[21, 41]",bowling_team_Kochi Tuskers Kerala x opponent_team_Royal Challengers Bengaluru,True,0.014967423640779581
+51,[51],venue_Eden Gardens,False,0.014825983215918593
+30,[30],opponent_team_Chennai Super Kings,False,0.014607931694594777
+366,"[11, 16]",dew_point x innings_pitch_wear,True,0.014073189422378403
+61,[61],venue_Narendra Modi Stadium,False,0.013612246454415196
+116,"[1, 72]",powerplay_balls_ratio x venue_SuperSport Park,True,0.013416910112945752
+420,"[13, 45]",wind_speed x venue_Barabati Stadium,True,0.013393082095795527
+452,"[26, 70]",bowling_team_Rajasthan Royals x venue_Sheikh Zayed Cricket Stadium,True,0.013278867367654903
+445,"[20, 32]",bowling_team_Gujarat Lions x opponent_team_Delhi Capitals,True,0.013017063922682589
+223,"[5, 21]",bowler_career_boundary_freq x bowling_team_Kochi Tuskers Kerala,True,0.012722373138561923
+24,[24],bowling_team_Pune Warriors,False,0.01252885202544278
+49,[49],venue_Dr DY Patil Sports Academy,False,0.012498816520099739
+280,"[7, 16]",opponent_avg_runs_per_over x innings_pitch_wear,True,0.012320808577349782
+426,"[14, 33]",is_night_match x opponent_team_Gujarat Lions,True,0.012217449205274664
+408,"[13, 16]",wind_speed x innings_pitch_wear,True,0.01218552939985632
+87,"[0, 13]",innings x wind_speed,True,0.011923772711775247
+465,"[42, 50]",opponent_team_Sunrisers Hyderabad x venue_Dubai International Cricket Stadium,True,0.011909855501934005
+287,"[7, 50]",opponent_avg_runs_per_over x venue_Dubai International Cricket Stadium,True,0.011674829853037156
+82,"[0, 7]",innings x opponent_avg_runs_per_over,True,0.011663160055731094
+431,"[15, 24]",pitch_degradation_proxy x bowling_team_Pune Warriors,True,0.01122675176572745
+449,"[24, 41]",bowling_team_Pune Warriors x opponent_team_Royal Challengers Bengaluru,True,0.011190849516398071
+184,"[4, 21]",bowler_career_economy x bowling_team_Kochi Tuskers Kerala,True,0.011103495731606506
+453,"[27, 33]",bowling_team_Rising Pune Supergiants x opponent_team_Gujarat Lions,True,0.010935396388570398
+84,"[0, 10]",innings x relative_humidity,True,0.010924805886131253
+77,[77],bowler_type_Spin,False,0.010794086056492333
+76,[76],bowler_type_Pace,False,0.010758285482662517
+59,[59],venue_MCA International Stadium,False,0.010668553239304115
+115,"[1, 70]",powerplay_balls_ratio x venue_Sheikh Zayed Cricket Stadium,True,0.010340528933113486
+86,"[0, 12]",innings x dew_spread,True,0.01011957448356758
+309,"[8, 33]",venue_historical_avg_economy x opponent_team_Gujarat Lions,True,0.010087217825172594
+266,"[6, 54]",bowler_strike_rate x venue_Holkar Cricket Stadium,True,0.009826426802345658
+204,"[4, 61]",bowler_career_economy x venue_Narendra Modi Stadium,True,0.009792743167293182
+460,"[38, 45]",opponent_team_Punjab Kings x venue_Barabati Stadium,True,0.009711981605057799
+25,[25],bowling_team_Punjab Kings,False,0.009687767917170919
+389,"[12, 16]",dew_spread x innings_pitch_wear,True,0.009643249834582113
+138,"[2, 47]",middle_balls_ratio x venue_Buffalo Park,True,0.009639599441006643
+414,"[13, 34]",wind_speed x opponent_team_Kochi Tuskers Kerala,True,0.009629756799884582
+107,"[1, 27]",powerplay_balls_ratio x bowling_team_Rising Pune Supergiants,True,0.009614227787089482
+88,"[0, 15]",innings x pitch_degradation_proxy,True,0.009454079699009186
+44,[44],venue_Arun Jaitley Stadium,False,0.009140573379967886
+345,"[10, 16]",relative_humidity x innings_pitch_wear,True,0.009003133403203132
+198,"[4, 50]",bowler_career_economy x venue_Dubai International Cricket Stadium,True,0.008993914667889609
+429,"[15, 16]",pitch_degradation_proxy x innings_pitch_wear,True,0.008974561455251379
+41,[41],opponent_team_Royal Challengers Bengaluru,False,0.008940099298929987
+135,"[2, 34]",middle_balls_ratio x opponent_team_Kochi Tuskers Kerala,True,0.00893375510171931
+65,[65],"venue_Rajiv Gandhi International Stadium, Uppal",False,0.008840720993500521
+91,"[1, 2]",powerplay_balls_ratio x middle_balls_ratio,True,0.008408156584885838
+467,"[54, 77]",venue_Holkar Cricket Stadium x bowler_type_Spin,True,0.008287833274591047
+466,"[54, 76]",venue_Holkar Cricket Stadium x bowler_type_Pace,True,0.008246934903887133
+455,"[29, 30]",bowling_team_Sunrisers Hyderabad x opponent_team_Chennai Super Kings,True,0.008240645347321187
+463,"[39, 54]",opponent_team_Rajasthan Royals x venue_Holkar Cricket Stadium,True,0.008153697425198399
+161,"[3, 37]",death_balls_ratio x opponent_team_Pune Warriors,True,0.008124111462184079
+440,"[16, 54]",innings_pitch_wear x venue_Holkar Cricket Stadium,True,0.007948794329268922
+236,"[5, 52]",bowler_career_boundary_freq x venue_Green Park Stadium,True,0.007946822634433207
+90,"[0, 54]",innings x venue_Holkar Cricket Stadium,True,0.007697610740125635
+183,"[4, 20]",bowler_career_economy x bowling_team_Gujarat Lions,True,0.00762095172221396
+258,"[6, 21]",bowler_strike_rate x bowling_team_Kochi Tuskers Kerala,True,0.00757403352433338
+443,"[18, 65]","bowling_team_Deccan Chargers x venue_Rajiv Gandhi International Stadium, Uppal",True,0.007568187924361177
+238,"[5, 54]",bowler_career_boundary_freq x venue_Holkar Cricket Stadium,True,0.007333028419149214
+267,"[6, 56]",bowler_strike_rate x venue_Kingsmead,True,0.007240248770068411
+286,"[7, 46]",opponent_avg_runs_per_over x venue_Brabourne Stadium,True,0.007056072107117638
+269,"[6, 63]",bowler_strike_rate x venue_Newlands Cricket Ground,True,0.006996877901983101
+384,"[11, 66]",dew_point x venue_Saurashtra Cricket Association Stadium,True,0.006955761552793071
+461,"[38, 53]",opponent_team_Punjab Kings x venue_Himachal Pradesh Cricket Association Stadium,True,0.00693264301205599
+38,[38],opponent_team_Punjab Kings,False,0.006827165216868995
+42,[42],opponent_team_Sunrisers Hyderabad,False,0.0067791516925734575
+36,[36],opponent_team_Mumbai Indians,False,0.006754057121179587
+337,"[9, 66]",temperature x venue_Saurashtra Cricket Association Stadium,True,0.006715674828784578
+451,"[25, 53]",bowling_team_Punjab Kings x venue_Himachal Pradesh Cricket Association Stadium,True,0.006706308332481618
+313,"[8, 44]",venue_historical_avg_economy x venue_Arun Jaitley Stadium,True,0.006701904084546866
+304,"[8, 21]",venue_historical_avg_economy x bowling_team_Kochi Tuskers Kerala,True,0.0066644357752237374
+72,[72],venue_SuperSport Park,False,0.006656897140302523
+307,"[8, 27]",venue_historical_avg_economy x bowling_team_Rising Pune Supergiants,True,0.006629323922521423
+400,"[12, 58]","dew_spread x venue_MA Chidambaram Stadium, Chepauk",True,0.006620126305101117
+228,"[5, 31]",bowler_career_boundary_freq x opponent_team_Deccan Chargers,True,0.006615025750058014
+323,"[9, 16]",temperature x innings_pitch_wear,True,0.006613825934829593
+265,"[6, 53]",bowler_strike_rate x venue_Himachal Pradesh Cricket Association Stadium,True,0.006601758458742285
+17,[17],bowling_team_Chennai Super Kings,False,0.006582020616854422
+66,[66],venue_Saurashtra Cricket Association Stadium,False,0.006577549711091769
+19,[19],bowling_team_Delhi Capitals,False,0.006314971787193641
+197,"[4, 46]",bowler_career_economy x venue_Brabourne Stadium,True,0.0062867999164847805
+422,"[13, 50]",wind_speed x venue_Dubai International Cricket Stadium,True,0.006189459996322576
+334,"[9, 46]",temperature x venue_Brabourne Stadium,True,0.006020711014580068
+271,"[6, 72]",bowler_strike_rate x venue_SuperSport Park,True,0.006004258268213299
+189,"[4, 33]",bowler_career_economy x opponent_team_Gujarat Lions,True,0.005923012522006079
+355,"[10, 58]","relative_humidity x venue_MA Chidambaram Stadium, Chepauk",True,0.005899336023356539
+385,"[11, 75]",dew_point x venue_Wankhede Stadium,True,0.005880632536248191
+437,"[15, 70]",pitch_degradation_proxy x venue_Sheikh Zayed Cricket Stadium,True,0.005850498585524139
+417,"[13, 39]",wind_speed x opponent_team_Rajasthan Royals,True,0.0057921796497355255
+14,[14],is_night_match,False,0.005699629515492216
+237,"[5, 53]",bowler_career_boundary_freq x venue_Himachal Pradesh Cricket Association Stadium,True,0.0056945253094910645
+427,"[14, 41]",is_night_match x opponent_team_Royal Challengers Bengaluru,True,0.005680752668344852
+305,"[8, 24]",venue_historical_avg_economy x bowling_team_Pune Warriors,True,0.005637945417441184
+169,"[3, 72]",death_balls_ratio x venue_SuperSport Park,True,0.0055418213166919285
+454,"[28, 35]",bowling_team_Royal Challengers Bengaluru x opponent_team_Kolkata Knight Riders,True,0.0055236629157156495
+235,"[5, 50]",bowler_career_boundary_freq x venue_Dubai International Cricket Stadium,True,0.005467208915911203
+284,"[7, 35]",opponent_avg_runs_per_over x opponent_team_Kolkata Knight Riders,True,0.005379467527078862
+200,"[4, 53]",bowler_career_economy x venue_Himachal Pradesh Cricket Association Stadium,True,0.005345315791491401
+289,"[7, 53]",opponent_avg_runs_per_over x venue_Himachal Pradesh Cricket Association Stadium,True,0.00533196708876115
+459,"[36, 51]",opponent_team_Mumbai Indians x venue_Eden Gardens,True,0.005319186175878923
+165,"[3, 56]",death_balls_ratio x venue_Kingsmead,True,0.00531479433894586
+375,"[11, 33]",dew_point x opponent_team_Gujarat Lions,True,0.005307309759877298
+327,"[9, 21]",temperature x bowling_team_Kochi Tuskers Kerala,True,0.005258744678976107
+434,"[15, 39]",pitch_degradation_proxy x opponent_team_Rajasthan Royals,True,0.005220353503272541
+257,"[6, 20]",bowler_strike_rate x bowling_team_Gujarat Lions,True,0.005216590582006823
+83,"[0, 9]",innings x temperature,True,0.0051757195603008635
+409,"[13, 19]",wind_speed x bowling_team_Delhi Capitals,True,0.005061470965988327
+315,"[8, 51]",venue_historical_avg_economy x venue_Eden Gardens,True,0.0050589924971536785
+316,"[8, 65]","venue_historical_avg_economy x venue_Rajiv Gandhi International Stadium, Uppal",True,0.004963299586531484
+282,"[7, 30]",opponent_avg_runs_per_over x opponent_team_Chennai Super Kings,True,0.004933696184009083
+157,"[3, 18]",death_balls_ratio x bowling_team_Deccan Chargers,True,0.004897470952320166
+137,"[2, 46]",middle_balls_ratio x venue_Brabourne Stadium,True,0.0048720597205482346
+447,"[22, 36]",bowling_team_Kolkata Knight Riders x opponent_team_Mumbai Indians,True,0.004715915526342845
+283,"[7, 33]",opponent_avg_runs_per_over x opponent_team_Gujarat Lions,True,0.004618459028844463
+160,"[3, 36]",death_balls_ratio x opponent_team_Mumbai Indians,True,0.0045318852723697225
+308,"[8, 29]",venue_historical_avg_economy x bowling_team_Sunrisers Hyderabad,True,0.004523120165193766
+359,"[10, 75]",relative_humidity x venue_Wankhede Stadium,True,0.004507964734686775
+396,"[12, 33]",dew_spread x opponent_team_Gujarat Lions,True,0.004398668041649826
+268,"[6, 58]","bowler_strike_rate x venue_MA Chidambaram Stadium, Chepauk",True,0.004392891375722055
+139,"[2, 53]",middle_balls_ratio x venue_Himachal Pradesh Cricket Association Stadium,True,0.00434970574980999
+415,"[13, 37]",wind_speed x opponent_team_Pune Warriors,True,0.004342544664103595
+205,"[4, 63]",bowler_career_economy x venue_Newlands Cricket Ground,True,0.004339478142325215
+312,"[8, 42]",venue_historical_avg_economy x opponent_team_Sunrisers Hyderabad,True,0.004333440046824645
+192,"[4, 39]",bowler_career_economy x opponent_team_Rajasthan Royals,True,0.0042597168428212435
+347,"[10, 24]",relative_humidity x bowling_team_Pune Warriors,True,0.0042137159654494945
+410,"[13, 20]",wind_speed x bowling_team_Gujarat Lions,True,0.0041484396130730345
+242,"[5, 63]",bowler_career_boundary_freq x venue_Newlands Cricket Ground,True,0.004112316171167587
+155,"[3, 14]",death_balls_ratio x is_night_match,True,0.004106608009569524
+234,"[5, 46]",bowler_career_boundary_freq x venue_Brabourne Stadium,True,0.004090077581797256
+233,"[5, 42]",bowler_career_boundary_freq x opponent_team_Sunrisers Hyderabad,True,0.004060251023073759
+317,"[8, 66]",venue_historical_avg_economy x venue_Saurashtra Cricket Association Stadium,True,0.003996580500604828
+381,"[11, 58]","dew_point x venue_MA Chidambaram Stadium, Chepauk",True,0.003975433056784862
+428,"[14, 58]","is_night_match x venue_MA Chidambaram Stadium, Chepauk",True,0.003967219357896964
+103,"[1, 15]",powerplay_balls_ratio x pitch_degradation_proxy,True,0.003904965488042764
+193,"[4, 40]",bowler_career_economy x opponent_team_Rising Pune Supergiants,True,0.0038956165595326444
+146,"[3, 5]",death_balls_ratio x bowler_career_boundary_freq,True,0.003878699657546626
+351,"[10, 33]",relative_humidity x opponent_team_Gujarat Lions,True,0.0038382453562271364
+263,"[6, 39]",bowler_strike_rate x opponent_team_Rajasthan Royals,True,0.0038224184759779113
+413,"[13, 33]",wind_speed x opponent_team_Gujarat Lions,True,0.0037759286543811122
+412,"[13, 28]",wind_speed x bowling_team_Royal Challengers Bengaluru,True,0.0037635732333774524
+392,"[12, 24]",dew_spread x bowling_team_Pune Warriors,True,0.003715128143904519
+222,"[5, 20]",bowler_career_boundary_freq x bowling_team_Gujarat Lions,True,0.0036931165529778065
+67,[67],venue_Sawai Mansingh Stadium,False,0.0036523165595983404
+162,"[3, 41]",death_balls_ratio x opponent_team_Royal Challengers Bengaluru,True,0.0036409653085032077
+168,"[3, 67]",death_balls_ratio x venue_Sawai Mansingh Stadium,True,0.0036299693989401004
+93,"[1, 4]",powerplay_balls_ratio x bowler_career_economy,True,0.003620582400483285
+114,"[1, 58]","powerplay_balls_ratio x venue_MA Chidambaram Stadium, Chepauk",True,0.003595604605933976
+264,"[6, 44]",bowler_strike_rate x venue_Arun Jaitley Stadium,True,0.003590585333685824
+403,"[12, 66]",dew_spread x venue_Saurashtra Cricket Association Stadium,True,0.0035806155999443933
+167,"[3, 64]","death_balls_ratio x venue_Punjab Cricket Association IS Bindra Stadium, Mohali",True,0.0035671892978047415
+117,"[1, 75]",powerplay_balls_ratio x venue_Wankhede Stadium,True,0.0035587140625044983
+291,"[7, 64]","opponent_avg_runs_per_over x venue_Punjab Cricket Association IS Bindra Stadium, Mohali",True,0.003547722145938105
+433,"[15, 38]",pitch_degradation_proxy x opponent_team_Punjab Kings,True,0.003518985834740021
+270,"[6, 67]",bowler_strike_rate x venue_Sawai Mansingh Stadium,True,0.0035079488835686695
+241,"[5, 59]",bowler_career_boundary_freq x venue_MCA International Stadium,True,0.003496407446938747
+292,"[7, 66]",opponent_avg_runs_per_over x venue_Saurashtra Cricket Association Stadium,True,0.0034922074993271697
+243,"[5, 65]","bowler_career_boundary_freq x venue_Rajiv Gandhi International Stadium, Uppal",True,0.003479382797787831
+121,"[2, 4]",middle_balls_ratio x bowler_career_economy,True,0.0034731166160944646
+306,"[8, 25]",venue_historical_avg_economy x bowling_team_Punjab Kings,True,0.003470028529540031
+290,"[7, 59]",opponent_avg_runs_per_over x venue_MCA International Stadium,True,0.0034414339698587426
+441,"[17, 38]",bowling_team_Chennai Super Kings x opponent_team_Punjab Kings,True,0.0034239829152913387
+21,[21],bowling_team_Kochi Tuskers Kerala,False,0.003409964865154361
+22,[22],bowling_team_Kolkata Knight Riders,False,0.0033988183936426294
+356,"[10, 59]",relative_humidity x venue_MCA International Stadium,True,0.0033906160169754323
+89,"[0, 20]",innings x bowling_team_Gujarat Lions,True,0.003339554407830741
+425,"[14, 17]",is_night_match x bowling_team_Chennai Super Kings,True,0.0033186178877490213
+423,"[13, 65]","wind_speed x venue_Rajiv Gandhi International Stadium, Uppal",True,0.0033133907481809996
+380,"[11, 57]",dew_point x venue_M Chinnaswamy Stadium,True,0.0032826418611114766
+439,"[16, 20]",innings_pitch_wear x bowling_team_Gujarat Lions,True,0.0032486523381131034
+438,"[15, 72]",pitch_degradation_proxy x venue_SuperSport Park,True,0.0032068753106455055
+109,"[1, 42]",powerplay_balls_ratio x opponent_team_Sunrisers Hyderabad,True,0.003192597675447644
+407,"[13, 15]",wind_speed x pitch_degradation_proxy,True,0.0031838151806819824
+346,"[10, 18]",relative_humidity x bowling_team_Deccan Chargers,True,0.003136469982101609
+335,"[9, 51]",temperature x venue_Eden Gardens,True,0.0031332595498675276
+260,"[6, 26]",bowler_strike_rate x bowling_team_Rajasthan Royals,True,0.0031275986436415507
+140,"[2, 58]","middle_balls_ratio x venue_MA Chidambaram Stadium, Chepauk",True,0.0031124829683828945
+206,"[4, 66]",bowler_career_economy x venue_Saurashtra Cricket Association Stadium,True,0.003103017264538786
+302,"[8, 15]",venue_historical_avg_economy x pitch_degradation_proxy,True,0.0030484425055628513
+262,"[6, 36]",bowler_strike_rate x opponent_team_Mumbai Indians,True,0.003029957609520081
+208,"[4, 75]",bowler_career_economy x venue_Wankhede Stadium,True,0.003026298117283832
+326,"[9, 20]",temperature x bowling_team_Gujarat Lions,True,0.003003232691074214
+293,"[7, 67]",opponent_avg_runs_per_over x venue_Sawai Mansingh Stadium,True,0.0029920990299397974
+240,"[5, 58]","bowler_career_boundary_freq x venue_MA Chidambaram Stadium, Chepauk",True,0.002987595903809145
+201,"[4, 54]",bowler_career_economy x venue_Holkar Cricket Stadium,True,0.0029639177207689002
+195,"[4, 42]",bowler_career_economy x opponent_team_Sunrisers Hyderabad,True,0.0029621252152834416
+372,"[11, 24]",dew_point x bowling_team_Pune Warriors,True,0.0029590401915046615
+390,"[12, 18]",dew_spread x bowling_team_Deccan Chargers,True,0.0029571058645928797
+187,"[4, 30]",bowler_career_economy x opponent_team_Chennai Super Kings,True,0.0029466821304216678
+333,"[9, 44]",temperature x venue_Arun Jaitley Stadium,True,0.00288303061369858
+401,"[12, 59]",dew_spread x venue_MCA International Stadium,True,0.002881802076749981
+35,[35],opponent_team_Kolkata Knight Riders,False,0.0028475171547072114
+196,"[4, 44]",bowler_career_economy x venue_Arun Jaitley Stadium,True,0.0028400945086718716
+28,[28],bowling_team_Royal Challengers Bengaluru,False,0.002818417271126059
+194,"[4, 41]",bowler_career_economy x opponent_team_Royal Challengers Bengaluru,True,0.0028144500915086705
+374,"[11, 32]",dew_point x opponent_team_Delhi Capitals,True,0.0027887811795425568
+382,"[11, 64]","dew_point x venue_Punjab Cricket Association IS Bindra Stadium, Mohali",True,0.0027647352316465946
+322,"[9, 15]",temperature x pitch_degradation_proxy,True,0.0027333881873447294
+376,"[11, 35]",dew_point x opponent_team_Kolkata Knight Riders,True,0.002712744033957024
+397,"[12, 35]",dew_spread x opponent_team_Kolkata Knight Riders,True,0.0026931448887626518
+232,"[5, 41]",bowler_career_boundary_freq x opponent_team_Royal Challengers Bengaluru,True,0.0026871792598243158
+324,"[9, 18]",temperature x bowling_team_Deccan Chargers,True,0.0026858213307791494
+436,"[15, 64]","pitch_degradation_proxy x venue_Punjab Cricket Association IS Bindra Stadium, Mohali",True,0.002683390235767517
+435,"[15, 58]","pitch_degradation_proxy x venue_MA Chidambaram Stadium, Chepauk",True,0.0026755424065245154
+120,"[2, 3]",middle_balls_ratio x death_balls_ratio,True,0.0026746939871611676
+145,"[3, 4]",death_balls_ratio x bowler_career_economy,True,0.0026621584209044883
+424,"[14, 15]",is_night_match x pitch_degradation_proxy,True,0.0026360542186077518
+352,"[10, 35]",relative_humidity x opponent_team_Kolkata Knight Riders,True,0.002631905456792663
+244,"[5, 66]",bowler_career_boundary_freq x venue_Saurashtra Cricket Association Stadium,True,0.0026078385444074223
+64,[64],"venue_Punjab Cricket Association IS Bindra Stadium, Mohali",False,0.0026053933936792885
+122,"[2, 5]",middle_balls_ratio x bowler_career_boundary_freq,True,0.002582255910993366
+281,"[7, 24]",opponent_avg_runs_per_over x bowling_team_Pune Warriors,True,0.0025744960231955005
+239,"[5, 57]",bowler_career_boundary_freq x venue_M Chinnaswamy Stadium,True,0.0025480664194629955
+369,"[11, 19]",dew_point x bowling_team_Delhi Capitals,True,0.002531802541240723
+332,"[9, 39]",temperature x opponent_team_Rajasthan Royals,True,0.0025271483763105594
+378,"[11, 39]",dew_point x opponent_team_Rajasthan Royals,True,0.0025040893994114043
+358,"[10, 66]",relative_humidity x venue_Saurashtra Cricket Association Stadium,True,0.0024887795912854854
+158,"[3, 23]",death_balls_ratio x bowling_team_Mumbai Indians,True,0.0024798169180479264
+336,"[9, 65]","temperature x venue_Rajiv Gandhi International Stadium, Uppal",True,0.0024571267252542933
+156,"[3, 15]",death_balls_ratio x pitch_degradation_proxy,True,0.002450302205797707
+112,"[1, 54]",powerplay_balls_ratio x venue_Holkar Cricket Stadium,True,0.0024415772699947634
+252,"[6, 11]",bowler_strike_rate x dew_point,True,0.00239700094067203
+373,"[11, 26]",dew_point x bowling_team_Rajasthan Royals,True,0.002396145577647962
+181,"[4, 17]",bowler_career_economy x bowling_team_Chennai Super Kings,True,0.0023939135303146625
+430,"[15, 17]",pitch_degradation_proxy x bowling_team_Chennai Super Kings,True,0.0023906549412591005
+331,"[9, 35]",temperature x opponent_team_Kolkata Knight Riders,True,0.002357571960024776
+188,"[4, 31]",bowler_career_economy x opponent_team_Deccan Chargers,True,0.0023520929344749172
+152,"[3, 11]",death_balls_ratio x dew_point,True,0.002331100212691069
+219,"[5, 15]",bowler_career_boundary_freq x pitch_degradation_proxy,True,0.0023243707843448617
+457,"[30, 77]",opponent_team_Chennai Super Kings x bowler_type_Spin,True,0.0022839235360897054
+456,"[30, 76]",opponent_team_Chennai Super Kings x bowler_type_Pace,True,0.0022820348346214137
+231,"[5, 39]",bowler_career_boundary_freq x opponent_team_Rajasthan Royals,True,0.0022743905424149917
+170,"[4, 5]",bowler_career_economy x bowler_career_boundary_freq,True,0.0022738976009616823
+131,"[2, 14]",middle_balls_ratio x is_night_match,True,0.002269933928282659
+191,"[4, 38]",bowler_career_economy x opponent_team_Punjab Kings,True,0.0022653036613525107
+256,"[6, 19]",bowler_strike_rate x bowling_team_Delhi Capitals,True,0.002217870603155171
+419,"[13, 44]",wind_speed x venue_Arun Jaitley Stadium,True,0.002206576683482055
+394,"[12, 26]",dew_spread x bowling_team_Rajasthan Royals,True,0.002204523481994119
+226,"[5, 26]",bowler_career_boundary_freq x bowling_team_Rajasthan Royals,True,0.002180538108549854
+106,"[1, 23]",powerplay_balls_ratio x bowling_team_Mumbai Indians,True,0.0021758160413279043
+224,"[5, 22]",bowler_career_boundary_freq x bowling_team_Kolkata Knight Riders,True,0.0021571282515167843
+416,"[13, 38]",wind_speed x opponent_team_Punjab Kings,True,0.002143558448574201
+95,"[1, 6]",powerplay_balls_ratio x bowler_strike_rate,True,0.002137573938154461
+199,"[4, 51]",bowler_career_economy x venue_Eden Gardens,True,0.0021240997848261567
+388,"[12, 15]",dew_spread x pitch_degradation_proxy,True,0.002112181025967601
+26,[26],bowling_team_Rajasthan Royals,False,0.002093732074568867
+329,"[9, 28]",temperature x bowling_team_Royal Challengers Bengaluru,True,0.002091431575452423
+406,"[13, 14]",wind_speed x is_night_match,True,0.0020886827930069385
+349,"[10, 26]",relative_humidity x bowling_team_Rajasthan Royals,True,0.002084273116846405
+339,"[9, 77]",temperature x bowler_type_Spin,True,0.0020528914873627737
+368,"[11, 18]",dew_point x bowling_team_Deccan Chargers,True,0.002039143209660096
+371,"[11, 22]",dew_point x bowling_team_Kolkata Knight Riders,True,0.002038173667337115
+159,"[3, 26]",death_balls_ratio x bowling_team_Rajasthan Royals,True,0.002035318516635139
+377,"[11, 36]",dew_point x opponent_team_Mumbai Indians,True,0.0020162740846348124
+78,"[0, 1]",innings x powerplay_balls_ratio,True,0.0020150620120237576
+338,"[9, 76]",temperature x bowler_type_Pace,True,0.002006571839960871
+391,"[12, 22]",dew_spread x bowling_team_Kolkata Knight Riders,True,0.002004940557946934
+186,"[4, 25]",bowler_career_economy x bowling_team_Punjab Kings,True,0.0019968980988975724
+149,"[3, 8]",death_balls_ratio x venue_historical_avg_economy,True,0.001992228661554838
+179,"[4, 15]",bowler_career_economy x pitch_degradation_proxy,True,0.001973849525587696
+365,"[11, 15]",dew_point x pitch_degradation_proxy,True,0.0019738119149446645
+393,"[12, 25]",dew_spread x bowling_team_Punjab Kings,True,0.0019735916967113564
+209,"[4, 76]",bowler_career_economy x bowler_type_Pace,True,0.0019594761199165536
+297,"[8, 10]",venue_historical_avg_economy x relative_humidity,True,0.0019470960410130824
+92,"[1, 3]",powerplay_balls_ratio x death_balls_ratio,True,0.0019448243048694207
+102,"[1, 13]",powerplay_balls_ratio x wind_speed,True,0.0019427347643426816
+364,"[11, 14]",dew_point x is_night_match,True,0.0019409359138347444
+370,"[11, 20]",dew_point x bowling_team_Gujarat Lions,True,0.0019400227617844257
+379,"[11, 41]",dew_point x opponent_team_Royal Challengers Bengaluru,True,0.0019326770548654237
+123,"[2, 6]",middle_balls_ratio x bowler_strike_rate,True,0.0019242213202695852
+210,"[4, 77]",bowler_career_economy x bowler_type_Spin,True,0.0019157418922654311
+272,"[7, 8]",opponent_avg_runs_per_over x venue_historical_avg_economy,True,0.0019104702871364627
+328,"[9, 26]",temperature x bowling_team_Rajasthan Royals,True,0.0019090449439169211
+104,"[1, 16]",powerplay_balls_ratio x innings_pitch_wear,True,0.0019075184070027212
+230,"[5, 38]",bowler_career_boundary_freq x opponent_team_Punjab Kings,True,0.0018833935819664602
+100,"[1, 11]",powerplay_balls_ratio x dew_point,True,0.0018709375025586644
+344,"[10, 15]",relative_humidity x pitch_degradation_proxy,True,0.0018686326278773485
+348,"[10, 25]",relative_humidity x bowling_team_Punjab Kings,True,0.001821403845875134
+288,"[7, 51]",opponent_avg_runs_per_over x venue_Eden Gardens,True,0.0018139937668637733
+325,"[9, 19]",temperature x bowling_team_Delhi Capitals,True,0.0018127571024173074
+147,"[3, 6]",death_balls_ratio x bowler_strike_rate,True,0.0018070797253796217
+311,"[8, 41]",venue_historical_avg_economy x opponent_team_Royal Challengers Bengaluru,True,0.0017946125609544122
+250,"[6, 9]",bowler_strike_rate x temperature,True,0.0017681076786347414
+411,"[13, 24]",wind_speed x bowling_team_Pune Warriors,True,0.0017633761585320318
+221,"[5, 19]",bowler_career_boundary_freq x bowling_team_Delhi Capitals,True,0.0017351132019681388
+301,"[8, 14]",venue_historical_avg_economy x is_night_match,True,0.0017296158297964983
+118,"[1, 76]",powerplay_balls_ratio x bowler_type_Pace,True,0.0016930006223229174
+398,"[12, 36]",dew_spread x opponent_team_Mumbai Indians,True,0.0016652787283708312
+203,"[4, 58]","bowler_career_economy x venue_MA Chidambaram Stadium, Chepauk",True,0.0016648570882875132
+299,"[8, 12]",venue_historical_avg_economy x dew_spread,True,0.0016612332498474576
+31,[31],opponent_team_Deccan Chargers,False,0.0016582542221633997
+259,"[6, 22]",bowler_strike_rate x bowling_team_Kolkata Knight Riders,True,0.001646213537658634
+182,"[4, 19]",bowler_career_economy x bowling_team_Delhi Capitals,True,0.001631592500161455
+96,"[1, 7]",powerplay_balls_ratio x opponent_avg_runs_per_over,True,0.001619729386604525
+418,"[13, 41]",wind_speed x opponent_team_Royal Challengers Bengaluru,True,0.0016183674774220827
+285,"[7, 44]",opponent_avg_runs_per_over x venue_Arun Jaitley Stadium,True,0.0016170295654778415
+190,"[4, 35]",bowler_career_economy x opponent_team_Kolkata Knight Riders,True,0.0015882841327331141
+273,"[7, 9]",opponent_avg_runs_per_over x temperature,True,0.0015850284809537955
+353,"[10, 36]",relative_humidity x opponent_team_Mumbai Indians,True,0.0015791092930236565
+402,"[12, 65]","dew_spread x venue_Rajiv Gandhi International Stadium, Uppal",True,0.0015694004760887547
+387,"[12, 14]",dew_spread x is_night_match,True,0.001564820546417603
+132,"[2, 15]",middle_balls_ratio x pitch_degradation_proxy,True,0.0015535355531990738
+225,"[5, 23]",bowler_career_boundary_freq x bowling_team_Mumbai Indians,True,0.0015134132935076669
+212,"[5, 7]",bowler_career_boundary_freq x opponent_avg_runs_per_over,True,0.001509054201681054
+367,"[11, 17]",dew_point x bowling_team_Chennai Super Kings,True,0.0015069870276136067
+278,"[7, 14]",opponent_avg_runs_per_over x is_night_match,True,0.0015036317984342244
+247,"[5, 77]",bowler_career_boundary_freq x bowler_type_Spin,True,0.0014912956399818985
+246,"[5, 76]",bowler_career_boundary_freq x bowler_type_Pace,True,0.0014906959270555554
+248,"[6, 7]",bowler_strike_rate x opponent_avg_runs_per_over,True,0.001485327459533435
+357,"[10, 65]","relative_humidity x venue_Rajiv Gandhi International Stadium, Uppal",True,0.0014821296425172096
+119,"[1, 77]",powerplay_balls_ratio x bowler_type_Spin,True,0.001469352263507411
+354,"[10, 41]",relative_humidity x opponent_team_Royal Challengers Bengaluru,True,0.0014671885818776165
+143,"[2, 76]",middle_balls_ratio x bowler_type_Pace,True,0.0014661380770304914
+130,"[2, 13]",middle_balls_ratio x wind_speed,True,0.0014622425663509838
+202,"[4, 57]",bowler_career_economy x venue_M Chinnaswamy Stadium,True,0.001460413204381233
+298,"[8, 11]",venue_historical_avg_economy x dew_point,True,0.001446039524714587
+399,"[12, 41]",dew_spread x opponent_team_Royal Challengers Bengaluru,True,0.0014227425840415055
+154,"[3, 13]",death_balls_ratio x wind_speed,True,0.0013979314902752432
+39,[39],opponent_team_Rajasthan Royals,False,0.0013825687601229937
+185,"[4, 23]",bowler_career_economy x bowling_team_Mumbai Indians,True,0.0013803550520033784
+144,"[2, 77]",middle_balls_ratio x bowler_type_Spin,True,0.0013566595281265187
+98,"[1, 9]",powerplay_balls_ratio x temperature,True,0.0013539638022183453
+383,"[11, 65]","dew_point x venue_Rajiv Gandhi International Stadium, Uppal",True,0.0013507126846294
+275,"[7, 11]",opponent_avg_runs_per_over x dew_point,True,0.001350276883579444
+255,"[6, 15]",bowler_strike_rate x pitch_degradation_proxy,True,0.0013452833971481493
+395,"[12, 28]",dew_spread x bowling_team_Royal Challengers Bengaluru,True,0.0013412268639872089
+227,"[5, 30]",bowler_career_boundary_freq x opponent_team_Chennai Super Kings,True,0.001340765856923722
+330,"[9, 30]",temperature x opponent_team_Chennai Super Kings,True,0.0013327099375622946
+343,"[10, 14]",relative_humidity x is_night_match,True,0.0013257044123205905
+321,"[9, 13]",temperature x wind_speed,True,0.0012763999124264943
+261,"[6, 33]",bowler_strike_rate x opponent_team_Gujarat Lions,True,0.0012757130242241595
+171,"[4, 6]",bowler_career_economy x bowler_strike_rate,True,0.0012600523998969751
+211,"[5, 6]",bowler_career_boundary_freq x bowler_strike_rate,True,0.001248422627861625
+97,"[1, 8]",powerplay_balls_ratio x venue_historical_avg_economy,True,0.0012432057028974705
+153,"[3, 12]",death_balls_ratio x dew_spread,True,0.0012271854859158366
+150,"[3, 9]",death_balls_ratio x temperature,True,0.0011988661117391137
+177,"[4, 12]",bowler_career_economy x dew_spread,True,0.001189584512598428
+176,"[4, 11]",bowler_career_economy x dew_point,True,0.0011511251172556022
+134,"[2, 32]",middle_balls_ratio x opponent_team_Delhi Capitals,True,0.0011484876164082817
+148,"[3, 7]",death_balls_ratio x opponent_avg_runs_per_over,True,0.0011405371754733004
+173,"[4, 8]",bowler_career_economy x venue_historical_avg_economy,True,0.0011178383538917266
+175,"[4, 10]",bowler_career_economy x relative_humidity,True,0.001088472682728026
+386,"[12, 13]",dew_spread x wind_speed,True,0.0010590152302938933
+432,"[15, 36]",pitch_degradation_proxy x opponent_team_Mumbai Indians,True,0.001056422938114937
+253,"[6, 12]",bowler_strike_rate x dew_spread,True,0.0010510557609976316
+136,"[2, 36]",middle_balls_ratio x opponent_team_Mumbai Indians,True,0.001044061044633813
+421,"[13, 46]",wind_speed x venue_Brabourne Stadium,True,0.0010422303058946875
+151,"[3, 10]",death_balls_ratio x relative_humidity,True,0.0010343827875071727
+342,"[10, 13]",relative_humidity x wind_speed,True,0.0010339318986616725
+249,"[6, 8]",bowler_strike_rate x venue_historical_avg_economy,True,0.0010065629889174858
+350,"[10, 28]",relative_humidity x bowling_team_Royal Challengers Bengaluru,True,0.001003822842075634
+101,"[1, 12]",powerplay_balls_ratio x dew_spread,True,0.0010021929622765415
+245,"[5, 67]",bowler_career_boundary_freq x venue_Sawai Mansingh Stadium,True,0.0009863585448436699
+172,"[4, 7]",bowler_career_economy x opponent_avg_runs_per_over,True,0.0009847679575415644
+310,"[8, 39]",venue_historical_avg_economy x opponent_team_Rajasthan Royals,True,0.000971157721414685
+277,"[7, 13]",opponent_avg_runs_per_over x wind_speed,True,0.0009676978665229736
+29,[29],bowling_team_Sunrisers Hyderabad,False,0.0009631209090544778
+215,"[5, 10]",bowler_career_boundary_freq x relative_humidity,True,0.0009529931651767574
+207,"[4, 67]",bowler_career_economy x venue_Sawai Mansingh Stadium,True,0.0009503908144136841
+125,"[2, 8]",middle_balls_ratio x venue_historical_avg_economy,True,0.0009446910169062431
+94,"[1, 5]",powerplay_balls_ratio x bowler_career_boundary_freq,True,0.0009029174360368888
+361,"[10, 77]",relative_humidity x bowler_type_Spin,True,0.000881524277647937
+128,"[2, 11]",middle_balls_ratio x dew_point,True,0.0008796177328471508
+363,"[11, 13]",dew_point x wind_speed,True,0.0008670088570810321
+124,"[2, 7]",middle_balls_ratio x opponent_avg_runs_per_over,True,0.0008602941619939116
+214,"[5, 9]",bowler_career_boundary_freq x temperature,True,0.0008529179518826646
+303,"[8, 17]",venue_historical_avg_economy x bowling_team_Chennai Super Kings,True,0.0008510544712304984
+360,"[10, 76]",relative_humidity x bowler_type_Pace,True,0.0008477156884003438
+218,"[5, 13]",bowler_career_boundary_freq x wind_speed,True,0.0008408528284696356
+99,"[1, 10]",powerplay_balls_ratio x relative_humidity,True,0.0008376681785238889
+279,"[7, 15]",opponent_avg_runs_per_over x pitch_degradation_proxy,True,0.0008113883986241595
+251,"[6, 10]",bowler_strike_rate x relative_humidity,True,0.0007948381165379442
+318,"[9, 10]",temperature x relative_humidity,True,0.0007925518251512879
+129,"[2, 12]",middle_balls_ratio x dew_spread,True,0.0007872073144599917
+133,"[2, 16]",middle_balls_ratio x innings_pitch_wear,True,0.0007749055514795187
+229,"[5, 36]",bowler_career_boundary_freq x opponent_team_Mumbai Indians,True,0.0007646912786772859
+295,"[7, 77]",opponent_avg_runs_per_over x bowler_type_Spin,True,0.0007496503723781738
+319,"[9, 11]",temperature x dew_point,True,0.0007332418263088963
+178,"[4, 13]",bowler_career_economy x wind_speed,True,0.0007253112546439028
+296,"[8, 9]",venue_historical_avg_economy x temperature,True,0.0007201989971252603
+79,"[0, 2]",innings x middle_balls_ratio,True,0.0007020861226531245
+213,"[5, 8]",bowler_career_boundary_freq x venue_historical_avg_economy,True,0.0006915224058385045
+127,"[2, 10]",middle_balls_ratio x relative_humidity,True,0.0006702820281237213
+300,"[8, 13]",venue_historical_avg_economy x wind_speed,True,0.0006617861590828085
+405,"[12, 77]",dew_spread x bowler_type_Spin,True,0.0006577306190925343
+362,"[11, 12]",dew_point x dew_spread,True,0.0006338253731208751
+404,"[12, 76]",dew_spread x bowler_type_Pace,True,0.0006322682512537063
+216,"[5, 11]",bowler_career_boundary_freq x dew_point,True,0.000620011207158305
+294,"[7, 76]",opponent_avg_runs_per_over x bowler_type_Pace,True,0.0006032243524349782
+341,"[10, 12]",relative_humidity x dew_spread,True,0.0005981522157521656
+174,"[4, 9]",bowler_career_economy x temperature,True,0.0005715995606309992
+276,"[7, 12]",opponent_avg_runs_per_over x dew_spread,True,0.0005478380194933062
+217,"[5, 12]",bowler_career_boundary_freq x dew_spread,True,0.0005384003640722708
+274,"[7, 10]",opponent_avg_runs_per_over x relative_humidity,True,0.0005132976451047999
+340,"[10, 11]",relative_humidity x dew_point,True,0.0005026773381266911
+254,"[6, 13]",bowler_strike_rate x wind_speed,True,0.00047703502188393244
+320,"[9, 12]",temperature x dew_spread,True,0.0004329846288055522
+126,"[2, 9]",middle_balls_ratio x temperature,True,0.00040726296731151125
+32,[32],opponent_team_Delhi Capitals,False,0.00023023403426942717
+34,[34],opponent_team_Kochi Tuskers Kerala,False,0.00017040267225823373
+33,[33],opponent_team_Gujarat Lions,False,0.00014128052954050251

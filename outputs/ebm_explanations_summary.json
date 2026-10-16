@@ -1,0 +1,66 @@
+{
+  "economy_rate": {
+    "top_5_features": [
+      {
+        "feature_name": "powerplay_balls_ratio",
+        "importance_score": 0.09868311193132355,
+        "is_interaction": false
+      },
+      {
+        "feature_name": "venue_Mangaung Oval",
+        "importance_score": 0.09601995858040836,
+        "is_interaction": false
+      },
+      {
+        "feature_name": "venue_Diamond Oval",
+        "importance_score": 0.07222863005720273,
+        "is_interaction": false
+      },
+      {
+        "feature_name": "innings",
+        "importance_score": 0.06854962530683897,
+        "is_interaction": false
+      },
+      {
+        "feature_name": "venue_Sheikh Zayed Cricket Stadium",
+        "importance_score": 0.06681864356149791,
+        "is_interaction": false
+      }
+    ],
+    "feature_importance_plot": "outputs/ebm_economy_rate_feature_importance.png",
+    "shape_functions_plot": "outputs/ebm_economy_rate_shape_functions.png",
+    "explanation_description": "Explainable Boosting Machines (EBM) decompose the predicted economy rate into additive 1D shape functions and 2D interaction terms. Each shape curve explains the isolated non-linear marginal effect of that feature on the target."
+  },
+  "boundary_frequency": {
+    "top_5_features": [
+      {
+        "feature_name": "powerplay_balls_ratio",
+        "importance_score": 0.09868311193132355,
+        "is_interaction": false
+      },
+      {
+        "feature_name": "venue_Mangaung Oval",
+        "importance_score": 0.09601995858040836,
+        "is_interaction": false
+      },
+      {
+        "feature_name": "venue_Diamond Oval",
+        "importance_score": 0.07222863005720273,
+        "is_interaction": false
+      },
+      {
+        "feature_name": "innings",
+        "importance_score": 0.06854962530683897,
+        "is_interaction": false
+      },
+      {
+        "feature_name": "venue_Sheikh Zayed Cricket Stadium",
+        "importance_score": 0.06681864356149791,
+        "is_interaction": false
+      }
+    ],
+    "feature_importance_plot": "outputs/ebm_boundary_frequency_feature_importance.png",
+    "shape_functions_plot": "outputs/ebm_boundary_frequency_shape_functions.png",
+    "explanation_description": "Explainable Boosting Machines (EBM) decompose the predicted boundary frequency into additive 1D shape functions and 2D interaction terms. Each shape curve explains the isolated non-linear marginal effect of that feature on the target."
+  }
+}
