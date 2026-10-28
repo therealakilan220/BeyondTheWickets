@@ -1,0 +1,11 @@
+/* Custom styling for BeyondTheWickets */
+body {
+    background-color: #f8f9fa;
+}
+.navbar {
+    margin-bottom: 2rem;
+}
+.card-img-top {
+    object-fit: contain;
+    max-height: 300px;
+}
