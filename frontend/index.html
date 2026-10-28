@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <title>BeyondTheWickets – Spatio-Temporal Micro-Weather & Pitch Degradation Analytics Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            stadium: {
+              950: '#070c1d',
+              900: '#0B132B',
+              800: '#1C2541',
+              700: '#3A506B'
+            },
+            turf: {
+              DEFAULT: '#10B981',
+              dark: '#059669',
+              light: '#34D399'
+            },
+            dew: {
+              DEFAULT: '#06B6D4',
+              glow: '#38BDF8'
+            },
+            alert: {
+              DEFAULT: '#F43F5E',
+              dark: '#EF4444'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #070c1d;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+    }
+    .glass-card {
+      background: rgba(28, 37, 65, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(58, 80, 107, 0.45);
+      border-radius: 1rem;
+      transition: all 0.25s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.15);
+    }
+    .glow-turf {
+      box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.3);
+    }
+    .glow-dew {
+      box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.3);
+    }
+    .glow-alert {
+      box-shadow: 0 0 25px -5px rgba(244, 63, 94, 0.3);
+    }
+    /* Custom Range Sliders */
+    input[type=range] {
+      accent-color: #06B6D4;
+    }
+    /* Tab Styling */
+    .tab-btn.active {
+      background: #06B6D4;
+      color: #070c1d;
+      font-weight: 700;
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+    }
+  </style>
+</head>
+<body class="selection:bg-dew selection:text-stadium-950">
+
+  <!-- ================= TOP NAVIGATION ================= -->
+  <nav class="sticky top-0 z-50 bg-stadium-950/85 backdrop-blur-md border-b border-stadium-700/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-turf to-dew flex items-center justify-center text-stadium-950 font-extrabold text-xl shadow-lg shadow-turf/20 group-hover:scale-105 transition-transform">
+            <i class="bi bi-radioactive"></i>
+          </div>
+          <div>
+            <div class="font-display font-extrabold text-lg text-white tracking-tight flex items-center gap-1.5">
+              BeyondTheWickets
+              <span class="text-xs px-2 py-0.5 rounded-full bg-turf/20 text-turf border border-turf/40 font-mono">IPL 2008–2026</span>
+            </div>
+            <p class="text-[10px] text-slate-400 font-medium">Spatio-Temporal Micro-Weather Analytics</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-1 text-sm font-medium">
+          <a href="#simulator" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-stadium-800 transition"><i class="bi bi-cpu text-dew me-1"></i>What-If Simulator</a>
+          <a href="#physics" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-stadium-800 transition"><i class="bi bi-wind text-turf me-1"></i>Cricket Physics</a>
+          <a href="#tableau" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-stadium-800 transition"><i class="bi bi-easel text-dew me-1"></i>Tableau Hub</a>
+          <a href="#casestudy" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-stadium-800 transition"><i class="bi bi-geo-alt text-amber-400 me-1"></i>Chepauk vs Chinnaswamy</a>
+          <a href="#benchmarks" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-stadium-800 transition"><i class="bi bi-graph-up text-turf me-1"></i>ML Benchmark</a>
+          <a href="#team" class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-stadium-800 transition"><i class="bi bi-people text-indigo-400 me-1"></i>Team & Paper</a>
+        </div>
+
+        <!-- GitHub / Viva Action -->
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/therealakilan220/BeyondTheWickets" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-stadium-800 hover:bg-stadium-700 text-xs font-semibold text-white border border-stadium-700/60 transition">
+            <i class="bi bi-github text-base"></i> GitHub
+          </a>
+          <a href="#tableau" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-dew to-turf text-xs font-bold text-stadium-950 shadow-md shadow-dew/20 hover:opacity-90 transition">
+            <i class="bi bi-play-circle-fill"></i> Live Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= COMPONENT 1: HERO & IMPACT COUNTERS ================= -->
+  <header class="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 border-b border-stadium-700/40">
+    <!-- Stadium Floodlight Ambient Gradients -->
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-dew/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-20 right-0 w-[30rem] h-[30rem] bg-turf/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Academic Sub-Tag -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stadium-800/80 border border-stadium-700/70 text-xs font-semibold text-slate-300 mb-6 backdrop-blur">
+        <span class="w-2 h-2 rounded-full bg-turf animate-pulse"></span>
+        <span>SRM Institute of Science and Technology • Big Data & ML Research</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.15] max-w-4xl mb-6">
+        Beyond the Wickets: <br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-dew via-turf to-amber-300">
+          Unveiling Micro-Weather & Pitch Degradation
+        </span> in the IPL (2008–2026)
+      </h1>
+
+      <!-- Executive Subtitle -->
+      <p class="text-slate-300 text-base sm:text-lg max-w-3xl leading-relaxed mb-10 font-normal">
+        An empirical big-data & machine learning study analyzing <strong>295,732 ball deliveries across 1,243 IPL matches</strong>. 
+        Quantifying how atmospheric moisture (dew point, relative humidity, condensation margin) and surface wear degrade bowler grip control, 
+        boundary concession rates, and phase-specific economy.
+      </p>
+
+      <!-- 4 Impact Metric Badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        
+        <div class="glass-card p-5 border-l-4 border-dew">
+          <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Total Deliveries</div>
+          <div class="font-display text-2xl sm:text-3xl font-extrabold text-white">295,732</div>
+          <div class="text-[11px] text-dew font-medium mt-1">1,243 Matches (18 Seasons)</div>
+        </div>
+
+        <div class="glass-card p-5 border-l-4 border-turf">
+          <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Aggregated Spells</div>
+          <div class="font-display text-2xl sm:text-3xl font-extrabold text-white">14,634</div>
+          <div class="text-[11px] text-turf font-medium mt-1">&ge; 6 legal balls filtered</div>
+        </div>
+
+        <div class="glass-card p-5 border-l-4 border-alert">
+          <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Spin Dew Penalty</div>
+          <div class="font-display text-2xl sm:text-3xl font-extrabold text-alert">+1.14 RPO</div>
+          <div class="text-[11px] text-alert font-medium mt-1">2nd Innings Grip Loss ($p < 0.05$)</div>
+        </div>
+
+        <div class="glass-card p-5 border-l-4 border-amber-400">
+          <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Temporal Leakage</div>
+          <div class="font-display text-2xl sm:text-3xl font-extrabold text-amber-300">0.00%</div>
+          <div class="text-[11px] text-slate-400 font-medium mt-1">Strict 3-Way Out-of-Time Split</div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+    <!-- ================= COMPONENT 2: THE CORE CONCEPT EXPLAINER ("CRICKET PHYSICS 101") ================= -->
+    <section id="physics" class="scroll-mt-20">
+      <div class="mb-8">
+        <div class="flex items-center gap-2 text-xs font-bold text-dew uppercase tracking-wider mb-1">
+          <i class="bi bi-mortarboard-fill"></i> Conceptual Foundation
+        </div>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl text-white">Cricket Physics 101: Why Bowlers Leak Runs Under Lights</h2>
+        <p class="text-slate-400 text-sm max-w-3xl">Making complex meteorology accessible to viva examiners, professors, and cricket analysts.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Concept Card 1: Dew Spread -->
+        <div class="glass-card p-6 flex flex-col justify-between border-t-2 border-dew">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-dew/10 text-dew flex items-center justify-center text-2xl mb-4">
+              <i class="bi bi-droplet-half"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">1. Dew Spread ($\Delta T = T_{amb} - T_{dew}$)</h3>
+            <p class="text-xs font-semibold text-dew mb-2">The Condensation Trigger Point</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              <strong>Plain English:</strong> Dew is not rain; it forms when ground air temperature cools to match the dew point. When spread &le; 6°C, grass blades saturate with water.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-stadium-700/60 bg-stadium-900/50 p-3 rounded-lg text-xs text-alert">
+            <strong>Impact on Bowler:</strong> Seam absorbs water; leather slips. Spinners lose finger revolutions ($\Delta \text{Rev} \downarrow$), resulting in accidental full tosses (+1.14 RPO).
+          </div>
+        </div>
+
+        <!-- Concept Card 2: 2nd Innings Chasing Dynamics -->
+        <div class="glass-card p-6 flex flex-col justify-between border-t-2 border-amber-400">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center text-2xl mb-4">
+              <i class="bi bi-moon-stars"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">2. Night Chasing Asymmetry</h3>
+            <p class="text-xs font-semibold text-amber-400 mb-2">Peak Relative Humidity (&gt;70%)</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              <strong>Plain English:</strong> IPL matches kick off at 7:30 PM. 1st innings operates in warmer, drier air. By the 2nd innings (9:15 PM – 11:00 PM), relative humidity spikes above 75%.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-stadium-700/60 bg-stadium-900/50 p-3 rounded-lg text-xs text-amber-300">
+            <strong>Impact on Bowler:</strong> Chasing teams benefit from faster outfield skid while bowlers struggle to grip death-over yorkers and wide variations.
+          </div>
+        </div>
+
+        <!-- Concept Card 3: Pitch Aging & Wear Proxy -->
+        <div class="glass-card p-6 flex flex-col justify-between border-t-2 border-turf">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-turf/10 text-turf flex items-center justify-center text-2xl mb-4">
+              <i class="bi bi-layers-half"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">3. Cumulative Pitch Wear</h3>
+            <p class="text-xs font-semibold text-turf mb-2">Surface Degradation Index (0–10)</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              <strong>Plain English:</strong> Pitches used repeatedly in late season deteriorate, losing clay elasticity. Dry pitches assist grip, but dew neutralizes cracks by providing lubricating moisture.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-stadium-700/60 bg-stadium-900/50 p-3 rounded-lg text-xs text-turf">
+            <strong>Impact on Bowler:</strong> On dry worn pitches, spinners save 0.28 RPO. When dew intervenes, worn surface grip is nullified, leading to extreme boundary surges.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= COMPONENT 5: INTERACTIVE WHAT-IF MATCH & WEATHER SIMULATOR ================= -->
+    <section id="simulator" class="scroll-mt-20">
+      <div class="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-bold text-turf uppercase tracking-wider mb-1">
+            <i class="bi bi-cpu-fill"></i> Machine Learning Inference
+          </div>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-white">Interactive What-If Match & Weather Simulator</h2>
+          <p class="text-slate-400 text-sm">Slide environmental levers to observe projected dew risk and bowler economy shifts powered by our XGBoost & EBM models.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-slate-400">Validated on:</span>
+          <span class="text-xs px-2.5 py-1 rounded-md bg-turf/20 text-turf border border-turf/40 font-mono font-bold">2023–2026 Blind Test</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Controls Column (7 Cols) -->
+        <div class="lg:col-span-7 glass-card p-6 sm:p-7">
+          <h3 class="font-display font-bold text-base text-white mb-5 flex items-center gap-2">
+            <i class="bi bi-sliders text-dew"></i> Atmospheric & Match Condition Controls
+          </h3>
+
+          <div class="space-y-6">
+            
+            <!-- Inning & Bowler Craft Toggles -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-2">Match Innings</label>
+                <div class="grid grid-cols-2 gap-2 bg-stadium-950 p-1.5 rounded-xl border border-stadium-700/50">
+                  <button type="button" id="toggleInn1" onclick="setInnings(1)" class="py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition">1st (Target Set)</button>
+                  <button type="button" id="toggleInn2" onclick="setInnings(2)" class="py-2 text-xs font-bold rounded-lg bg-dew text-stadium-950 transition">2nd (Night Chase)</button>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-2">Bowler Craft</label>
+                <div class="grid grid-cols-2 gap-2 bg-stadium-950 p-1.5 rounded-xl border border-stadium-700/50">
+                  <button type="button" id="toggleCraftSpin" onclick="setCraft('Spin')" class="py-2 text-xs font-bold rounded-lg bg-turf text-stadium-950 transition">Spin Bowler</button>
+                  <button type="button" id="toggleCraftPace" onclick="setCraft('Pace')" class="py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition">Pace Bowler</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Temperature Slider -->
+            <div>
+              <div class="flex justify-between items-center mb-1 text-xs">
+                <span class="text-slate-300 font-medium">Ambient Temperature ($T_{amb}$)</span>
+                <span id="tempDisplay" class="font-mono font-bold text-dew text-sm">28.0°C</span>
+              </div>
+              <input type="range" id="sliderTemp" min="20" max="42" step="0.5" value="28" class="w-full h-2 bg-stadium-950 rounded-lg cursor-pointer">
+              <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                <span>20°C (Cool night)</span>
+                <span>31°C (Warm evening)</span>
+                <span>42°C (Day peak)</span>
+              </div>
+            </div>
+
+            <!-- Relative Humidity Slider -->
+            <div>
+              <div class="flex justify-between items-center mb-1 text-xs">
+                <span class="text-slate-300 font-medium">Relative Humidity ($RH\%$)</span>
+                <span id="rhDisplay" class="font-mono font-bold text-dew text-sm">75%</span>
+              </div>
+              <input type="range" id="sliderRH" min="30" max="95" step="1" value="75" class="w-full h-2 bg-stadium-950 rounded-lg cursor-pointer">
+              <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                <span>30% (Dry inland)</span>
+                <span>65% (Threshold)</span>
+                <span>95% (Coastal saturate)</span>
+              </div>
+            </div>
+
+            <!-- Pitch Wear Slider -->
+            <div>
+              <div class="flex justify-between items-center mb-1 text-xs">
+                <span class="text-slate-300 font-medium">Pitch Wear (Prior Season Matches on Strip)</span>
+                <span id="pitchDisplay" class="font-mono font-bold text-turf text-sm">3 Matches</span>
+              </div>
+              <input type="range" id="sliderPitch" min="0" max="10" step="1" value="3" class="w-full h-2 bg-stadium-950 rounded-lg cursor-pointer">
+              <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                <span>0 (Fresh Pitch)</span>
+                <span>5 (Mid Season)</span>
+                <span>10 (Heavily Degraded)</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Real-Time Output Display (5 Cols) -->
+        <div class="lg:col-span-5 glass-card p-6 sm:p-7 flex flex-col justify-between border-t-4 border-alert">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xs uppercase tracking-wider font-bold text-slate-400">Projected Simulation</span>
+              <div id="dewRiskPill" class="px-3 py-1 rounded-full text-xs font-bold bg-alert/20 text-alert border border-alert/40 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-alert animate-ping"></span>
+                <span>Severe Dew Risk</span>
+              </div>
+            </div>
+
+            <!-- Dew Spread Gauge Card -->
+            <div class="p-4 rounded-xl bg-stadium-950/70 border border-stadium-700/60 mb-5">
+              <div class="flex justify-between items-baseline mb-1">
+                <span class="text-xs text-slate-300">Calculated Dew Spread:</span>
+                <span id="calcSpreadVal" class="font-mono text-xl font-extrabold text-alert">5.0°C</span>
+              </div>
+              <div class="w-full bg-stadium-800 h-2 rounded-full overflow-hidden my-2">
+                <div id="spreadProgressBar" class="h-full bg-alert rounded-full transition-all duration-300" style="width: 35%;"></div>
+              </div>
+              <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+                <span>&le; 6°C (Wet Ball Hazard)</span>
+                <span>&le; 10°C (Moderate)</span>
+                <span>&gt; 10°C (Dry)</span>
+              </div>
+            </div>
+
+            <!-- Economy Shift Delta -->
+            <div class="p-4 rounded-xl bg-stadium-950/70 border border-stadium-700/60 mb-5">
+              <div class="text-xs text-slate-400 mb-1">Projected Economy Rate ($\Delta$ RPO Shift)</div>
+              <div class="flex items-baseline gap-2">
+                <span id="simEconShift" class="font-display text-4xl font-extrabold text-alert">+1.14</span>
+                <span class="text-sm font-semibold text-slate-300">RPO Penalty</span>
+              </div>
+              <p id="simEconExplainer" class="text-xs text-slate-400 mt-2">
+                Spin grip loss severely compromises revolution rate. Outfield moisture leads to missed yorkers and increased boundary concession.
+              </p>
+            </div>
+
+            <!-- Boundary Frequency Shift -->
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="p-3 bg-stadium-950/50 rounded-lg border border-stadium-700/40">
+                <span class="text-slate-400 block mb-0.5">Boundary Risk</span>
+                <strong id="simBoundaryRisk" class="text-alert font-mono text-sm">+21.8% Surge</strong>
+              </div>
+              <div class="p-3 bg-stadium-950/50 rounded-lg border border-stadium-700/40">
+                <span class="text-slate-400 block mb-0.5">Control Index</span>
+                <strong id="simControlIndex" class="text-amber-400 font-mono text-sm">Degraded (42%)</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-stadium-700/60 flex items-center justify-between text-[11px] text-slate-400">
+            <span>Model: <strong class="text-slate-200">XGBoost & EBM Pipeline</strong></span>
+            <span><i class="bi bi-shield-check text-turf"></i> Zero Look-Ahead Bias</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= COMPONENT 3: EMBEDDED TABLEAU DASHBOARD ================= -->
+    <section id="tableau" class="scroll-mt-20">
+      <div class="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-bold text-dew uppercase tracking-wider mb-1">
+            <i class="bi bi-pie-chart-fill"></i> Spatial Visualization Lead (Yashmitha)
+          </div>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl text-white">Interactive Tableau Master Dashboard</h2>
+          <p class="text-slate-400 text-sm">Full interactive analytics suite: Geospatial dew mapping, 2nd innings grip loss heatmaps, and packed bubble comparisons.</p>
+        </div>
+        
+        <!-- Helper Action Pills -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="toggleTableauFullscreen()" class="px-3 py-1.5 rounded-lg bg-stadium-800 hover:bg-stadium-700 border border-stadium-700 text-xs font-semibold text-white transition flex items-center gap-1.5">
+            <i class="bi bi-arrows-fullscreen"></i> Fullscreen
+          </button>
+          <a href="https://public.tableau.com/app/profile/yashmitha.s/viz/IPLDewFactorVenueAnalysis/Dashboard1" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-dew hover:bg-dew-glow text-stadium-950 text-xs font-bold transition flex items-center gap-1.5">
+            <i class="bi bi-box-arrow-up-right"></i> Open on Tableau Public
+          </a>
+        </div>
+      </div>
+
+      <!-- Helper Guide Tips for Examiners -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+        <div class="px-4 py-2.5 rounded-lg bg-stadium-900 border border-dew/30 text-xs text-slate-300 flex items-center gap-2">
+          <i class="bi bi-lightbulb-fill text-dew text-sm"></i>
+          <span><strong>Examiner Tip 1:</strong> Click on <strong>MA Chidambaram Stadium (Chepauk)</strong> in the map to filter venue-specific humidity.</span>
+        </div>
+        <div class="px-4 py-2.5 rounded-lg bg-stadium-900 border border-alert/30 text-xs text-slate-300 flex items-center gap-2">
+          <i class="bi bi-filter-circle-fill text-alert text-sm"></i>
+          <span><strong>Examiner Tip 2:</strong> Highlight <strong>2nd Innings</strong> in the bottom heatmap to observe the severe dew hazard transition.</span>
+        </div>
+      </div>
+
+      <!-- Embedded Iframe Container -->
+      <div id="tableauContainer" class="tableauPlaceholder relative w-full h-[780px] sm:h-[820px] rounded-2xl overflow-hidden shadow-2xl border border-stadium-700/60 bg-stadium-950">
+        <iframe
+          src="https://public.tableau.com/views/IPLDewFactorVenueAnalysis/Dashboard1?:showVizHome=no&:embed=true&:toolbar=yes"
+          class="w-full h-full border-0"
+          title="IPL Dew Factor & Bowler Performance Master Dashboard"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- ================= COMPONENT 4: CHINNASWAMY VS CHEPAUK SHOWCASE ================= -->
+    <section id="casestudy" class="scroll-mt-20">
+      <div class="mb-8">
+        <div class="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">
+          <i class="bi bi-compass-fill"></i> Domain Comparative Study
+        </div>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl text-white">Venue Case Study: Chepauk vs. Chinnaswamy</h2>
+        <p class="text-slate-400 text-sm max-w-3xl">Direct empirical findings contrasting Chennai's coastal moisture against Bengaluru's high-altitude aerodynamics.</p>
+      </div>
+
+      <!-- Comparative Side-by-Side Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        
+        <!-- Chepauk Card -->
+        <div class="glass-card p-6 sm:p-7 border-l-4 border-dew">
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <h3 class="font-display font-bold text-xl text-white">MA Chidambaram Stadium (Chepauk)</h3>
+              <p class="text-xs text-dew font-medium"><i class="bi bi-geo-alt"></i> Chennai, Tamil Nadu • Coastal Climate</p>
+            </div>
+            <span class="text-xs font-bold px-2.5 py-1 rounded bg-dew/20 text-dew border border-dew/40">Dominant: Coastal Dew</span>
+          </div>
+
+          <p class="text-xs text-slate-300 leading-relaxed mb-6">
+            Proximity to the Bay of Bengal creates high relative humidity (<strong>72.9%</strong>). Evening temperature drops sustain a narrow dew spread of <strong>5.87°C</strong>, 
+            triggering severe wet-ball grip degradation for second-innings finger and wrist spinners.
+          </p>
+
+          <div class="grid grid-cols-3 gap-3 text-center text-xs">
+            <div class="p-3 bg-stadium-950/70 rounded-lg border border-stadium-700/50">
+              <span class="text-slate-400 block text-[10px]">Mean Humidity</span>
+              <strong class="font-mono text-dew text-sm font-bold">72.9%</strong>
+            </div>
+            <div class="p-3 bg-stadium-950/70 rounded-lg border border-stadium-700/50">
+              <span class="text-slate-400 block text-[10px]">Dew Spread</span>
+              <strong class="font-mono text-alert text-sm font-bold">5.87°C</strong>
+            </div>
+            <div class="p-3 bg-stadium-950/70 rounded-lg border border-stadium-700/50">
+              <span class="text-slate-400 block text-[10px]">Spin Economy</span>
+              <strong class="font-mono text-turf text-sm font-bold">7.73 RPO</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chinnaswamy Card -->
+        <div class="glass-card p-6 sm:p-7 border-l-4 border-amber-400">
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <h3 class="font-display font-bold text-xl text-white">M. Chinnaswamy Stadium</h3>
+              <p class="text-xs text-amber-400 font-medium"><i class="bi bi-geo-alt"></i> Bengaluru, Karnataka • Inland Altitude (920m)</p>
+            </div>
+            <span class="text-xs font-bold px-2.5 py-1 rounded bg-amber-400/20 text-amber-300 border border-amber-400/40">Dominant: Aerodynamics</span>
+          </div>
+
+          <p class="text-xs text-slate-300 leading-relaxed mb-6">
+            Situated at 920 meters elevation with a dry <strong>56.1%</strong> relative humidity profile. Low air density reduces aerodynamic drag, allowing cricket balls to travel 8–10% further. 
+            Coupled with small boundary dimensions, fast bowlers are heavily punished.
+          </p>
+
+          <div class="grid grid-cols-3 gap-3 text-center text-xs">
+            <div class="p-3 bg-stadium-950/70 rounded-lg border border-stadium-700/50">
+              <span class="text-slate-400 block text-[10px]">Mean Humidity</span>
+              <strong class="font-mono text-amber-400 text-sm font-bold">56.1%</strong>
+            </div>
+            <div class="p-3 bg-stadium-950/70 rounded-lg border border-stadium-700/50">
+              <span class="text-slate-400 block text-[10px]">Dew Spread</span>
+              <strong class="font-mono text-turf text-sm font-bold">11.0°C</strong>
+            </div>
+            <div class="p-3 bg-stadium-950/70 rounded-lg border border-stadium-700/50">
+              <span class="text-slate-400 block text-[10px]">Pace Economy</span>
+              <strong class="font-mono text-alert text-sm font-bold">9.37 RPO</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Detailed Comparison Matrix Table -->
+      <div class="glass-card overflow-hidden">
+        <div class="p-4 bg-stadium-800/60 border-b border-stadium-700/50 font-display font-bold text-sm text-white flex items-center justify-between">
+          <span>Comparative Parameter Matrix (Empirical Findings)</span>
+          <span class="text-xs font-mono text-slate-400">P-value &lt; 0.05</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-left">
+            <thead class="bg-stadium-950/60 text-slate-400 uppercase font-semibold">
+              <tr>
+                <th class="py-3 px-4">Evaluation Metric</th>
+                <th class="py-3 px-4 text-dew">MA Chidambaram Stadium (Chepauk)</th>
+                <th class="py-3 px-4 text-amber-300">M. Chinnaswamy Stadium</th>
+                <th class="py-3 px-4">Tactical Implication</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stadium-700/40 text-slate-300">
+              <tr class="hover:bg-stadium-800/40 transition">
+                <td class="py-3 px-4 font-semibold text-white">Dominant Meteorological Driver</td>
+                <td class="py-3 px-4 font-mono">High Relative Humidity & Dew Condensation</td>
+                <td class="py-3 px-4 font-mono">High Altitude Aerodynamics & Wind Shear</td>
+                <td class="py-3 px-4 text-slate-400">Toss winners bowl 1st in Chennai; chase boundary target in Bengaluru</td>
+              </tr>
+              <tr class="hover:bg-stadium-800/40 transition">
+                <td class="py-3 px-4 font-semibold text-white">Mean Relative Humidity</td>
+                <td class="py-3 px-4 font-mono font-bold text-dew">72.9%</td>
+                <td class="py-3 px-4 font-mono font-bold text-amber-300">56.1%</td>
+                <td class="py-3 px-4 text-slate-400">+16.8% moisture delta promotes heavy ball sweating</td>
+              </tr>
+              <tr class="hover:bg-stadium-800/40 transition">
+                <td class="py-3 px-4 font-semibold text-white">Mean Dew Spread ($\Delta T$)</td>
+                <td class="py-3 px-4 font-mono font-bold text-alert">5.87°C (Wet Ball Condition)</td>
+                <td class="py-3 px-4 font-mono font-bold text-turf">11.0°C (Dry Atmospheric Profile)</td>
+                <td class="py-3 px-4 text-slate-400">Chepauk frequently breaches the critical 6.0°C threshold</td>
+              </tr>
+              <tr class="hover:bg-stadium-800/40 transition">
+                <td class="py-3 px-4 font-semibold text-white">Vulnerable Bowling Category</td>
+                <td class="py-3 px-4 font-mono text-alert">Spinners (2nd Innings Grip Error)</td>
+                <td class="py-3 px-4 font-mono text-alert">Fast Bowlers (Short Boundary Concession)</td>
+                <td class="py-3 px-4 text-slate-400">Pace bowlers concede 9.37 RPO at Chinnaswamy</td>
+              </tr>
+              <tr class="hover:bg-stadium-800/40 transition">
+                <td class="py-3 px-4 font-semibold text-white">Baseline Benchmark Economy</td>
+                <td class="py-3 px-4 font-mono">Spin: 7.73 RPO | Overall: 7.87 RPO</td>
+                <td class="py-3 px-4 font-mono">Pace: 9.37 RPO | Overall: 8.83 RPO</td>
+                <td class="py-3 px-4 text-slate-400">Chinnaswamy yields +0.96 overall higher RPO</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPONENT 6: ML TRANSPARENCY & BENCHMARK PERFORMANCE ================= -->
+    <section id="benchmarks" class="scroll-mt-20">
+      <div class="mb-8">
+        <div class="flex items-center gap-2 text-xs font-bold text-turf uppercase tracking-wider mb-1">
+          <i class="bi bi-graph-up-arrow"></i> Model Evaluation Hub (Akilan Pon Ilango)
+        </div>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl text-white">Machine Learning Transparency & Benchmark Performance</h2>
+        <p class="text-slate-400 text-sm max-w-3xl">Strict Out-of-Time evaluation on 3,447 blind test spells (seasons 2023–2026). Zero data leakage verified.</p>
+      </div>
+
+      <!-- Model Performance Table -->
+      <div class="glass-card overflow-hidden mb-8">
+        <div class="p-4 bg-stadium-800/60 border-b border-stadium-700/50 flex justify-between items-center">
+          <span class="font-display font-bold text-sm text-white">Out-of-Time Test Set Model Evaluation (Seasons 2023–2026)</span>
+          <span class="text-xs px-2.5 py-1 rounded bg-turf/20 text-turf border border-turf/40 font-mono">3,447 Unseen Test Spells</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-left">
+            <thead class="bg-stadium-950/60 text-slate-400 uppercase font-semibold">
+              <tr>
+                <th class="py-3 px-4">Architecture</th>
+                <th class="py-3 px-4">Economy RMSE</th>
+                <th class="py-3 px-4">Economy MAE</th>
+                <th class="py-3 px-4">Boundary RMSE</th>
+                <th class="py-3 px-4">Target Feature Strength</th>
+                <th class="py-3 px-4">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stadium-700/40 text-slate-300">
+              <tr class="bg-turf/10 hover:bg-turf/15 transition font-semibold">
+                <td class="py-3 px-4 text-white flex items-center gap-2">
+                  <i class="bi bi-trophy-fill text-amber-400"></i>
+                  <span>XGBoost (16 Pruned Features)</span>
+                </td>
+                <td class="py-3 px-4 font-mono text-turf font-bold">3.038 ± 0.003</td>
+                <td class="py-3 px-4 font-mono">2.215</td>
+                <td class="py-3 px-4 font-mono text-turf">0.741</td>
+                <td class="py-3 px-4">Champion Model: 15-Fold Repeated Cross-Validation</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-turf/20 text-turf border border-turf/40">Champion</span></td>
+              </tr>
+              <tr class="hover:bg-stadium-800/40 transition">
+                <td class="py-3 px-4 text-white font-medium">Random Forest Regressor</td>
+                <td class="py-3 px-4 font-mono font-bold text-slate-200">3.5760</td>
+                <td class="py-3 px-4 font-mono">2.6645</td>
+                <td class="py-3 px-4 font-mono">0.7586</td>
+                <td class="py-3 px-4">Lowest Test Error on 2023–2026 Blind Partition</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-stadium-700 text-slate-300">Baseline</span></td>
+              </tr>
+              <tr class="hover:bg-stadium-800/40 transition">
+                <td class="py-3 px-4 text-white font-medium">LightGBM Regressor</td>
+                <td class="py-3 px-4 font-mono font-bold text-slate-200">3.5995</td>
+                <td class="py-3 px-4 font-mono">2.6868</td>
+                <td class="py-3 px-4 font-mono">0.7612</td>
+                <td class="py-3 px-4">High-Speed Gradient Boosted Decision Tree</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-stadium-700 text-slate-300">Baseline</span></td>
+              </tr>
+              <tr class="hover:bg-stadium-800/40 transition">
+                <td class="py-3 px-4 text-white font-medium">Explainable Boosting Machine (EBM)</td>
+                <td class="py-3 px-4 font-mono font-bold text-dew">3.6540</td>
+                <td class="py-3 px-4 font-mono">2.7572</td>
+                <td class="py-3 px-4 font-mono">0.7705</td>
+                <td class="py-3 px-4">Glass-Box Additive Model isolating Dew Shape Functions</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-dew/20 text-dew border border-dew/40">XAI Lead</span></td>
+              </tr>
+              <tr class="hover:bg-stadium-800/40 transition">
+                <td class="py-3 px-4 text-slate-400 font-medium">Linear Regression Baseline</td>
+                <td class="py-3 px-4 font-mono">3.6620</td>
+                <td class="py-3 px-4 font-mono">2.7134</td>
+                <td class="py-3 px-4 font-mono">0.7820</td>
+                <td class="py-3 px-4">Standard Statistical Linear Benchmark</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-stadium-800 text-slate-500">Reference</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Research Plots Gallery from outputs/ -->
+      <h3 class="font-display font-bold text-lg text-white mb-4 flex items-center gap-2">
+        <i class="bi bi-images text-dew"></i> Research Visual Assets & Empirical Plots
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="glass-card overflow-hidden">
+          <div class="p-3 bg-stadium-950/70 border-b border-stadium-700/50 text-xs font-semibold text-slate-300">
+            Ball Grip Loss & Dew Analysis
+          </div>
+          <img src="assets/outputs/dew_impact_ball_grip_analysis.png" alt="Dew Impact Ball Grip" class="w-full h-48 object-cover bg-white/5 p-2">
+          <div class="p-3 text-[11px] text-slate-400">
+            Quantifying spin control degradation across dew spread thresholds.
+          </div>
+        </div>
+
+        <div class="glass-card overflow-hidden">
+          <div class="p-3 bg-stadium-950/70 border-b border-stadium-700/50 text-xs font-semibold text-slate-300">
+            Chinnaswamy vs Chepauk Feature Importances
+          </div>
+          <img src="assets/outputs/feature_importance_chinnaswamy_vs_chepauk.png" alt="Venue Feature Importance" class="w-full h-48 object-cover bg-white/5 p-2">
+          <div class="p-3 text-[11px] text-slate-400">
+            Comparative feature weights isolating altitude vs coastal moisture.
+          </div>
+        </div>
+
+        <div class="glass-card overflow-hidden">
+          <div class="p-3 bg-stadium-950/70 border-b border-stadium-700/50 text-xs font-semibold text-slate-300">
+            EBM Non-Linear Shape Functions
+          </div>
+          <img src="assets/outputs/ebm_economy_rate_shape_functions.png" alt="EBM Shape Functions" class="w-full h-48 object-cover bg-white/5 p-2">
+          <div class="p-3 text-[11px] text-slate-400">
+            Glass-box spline curves isolating the exact &le; 6°C dew inflection.
+          </div>
+        </div>
+
+        <div class="glass-card overflow-hidden">
+          <div class="p-3 bg-stadium-950/70 border-b border-stadium-700/50 text-xs font-semibold text-slate-300">
+            XGBoost Champion Model Evaluation
+          </div>
+          <img src="assets/outputs/xgboost_proposed_model_evaluation.png" alt="XGBoost Proposed Evaluation" class="w-full h-48 object-cover bg-white/5 p-2">
+          <div class="p-3 text-[11px] text-slate-400">
+            Out-of-time evaluation plot across 15 repeated cross-validation runs.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= COMPONENT 7: TEAM ARCHITECTURE & VIVA BREAKDOWN ================= -->
+    <section id="team" class="scroll-mt-20">
+      <div class="mb-8">
+        <div class="flex items-center gap-2 text-xs font-bold text-indigo-400 uppercase tracking-wider mb-1">
+          <i class="bi bi-people-fill"></i> Project Viva Defense
+        </div>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl text-white">4-Tier Project Architecture & Team Contributions</h2>
+        <p class="text-slate-400 text-sm max-w-3xl">Comprehensive breakdown of distributed responsibilities for the faculty presentation and conference paper.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Member 1 -->
+        <div class="glass-card p-5 border-t-4 border-indigo-400 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-indigo-400/20 text-indigo-300 font-mono">Member 1</span>
+              <i class="bi bi-person-fill text-indigo-400 text-lg"></i>
+            </div>
+            <h4 class="font-display font-bold text-base text-white">Priyadharshini</h4>
+            <p class="text-xs text-indigo-400 font-medium mb-3">Match Dynamics Lead</p>
+            <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+              <li>Ball-by-ball extraction (295k rows)</li>
+              <li>Player name standardization</li>
+              <li>Phase ratios (Powerplay/Middle/Death)</li>
+              <li>Career economy baseline tracking</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Member 2: Yashmitha (Current User) -->
+        <div class="glass-card p-5 border-t-4 border-dew flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-dew/10 rounded-full blur-xl pointer-events-none"></div>
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-dew/20 text-dew font-mono">Member 2 (You)</span>
+              <i class="bi bi-star-fill text-dew text-base"></i>
+            </div>
+            <h4 class="font-display font-bold text-base text-white">Yashmitha</h4>
+            <p class="text-xs text-dew font-medium mb-3">Weather & Spatial Lead</p>
+            <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+              <li>Venue GPS geocoding across India</li>
+              <li>Micro-climate telemetry ingestion</li>
+              <li><strong>Tableau Master Dashboard</strong> design</li>
+              <li><strong>Web Platform UI/UX</strong> engineering</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="glass-card p-5 border-t-4 border-turf flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-turf/20 text-turf font-mono">Member 3</span>
+              <i class="bi bi-database-gear text-turf text-lg"></i>
+            </div>
+            <h4 class="font-display font-bold text-base text-white">Arvindkumar</h4>
+            <p class="text-xs text-turf font-medium mb-3">Big Data Engineer</p>
+            <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+              <li>PySpark distributed data fusion</li>
+              <li>Spatial-temporal coordinate joining</li>
+              <li>Pitch degradation proxy engineering</li>
+              <li>Zero-leakage temporal pipeline</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="glass-card p-5 border-t-4 border-amber-400 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 font-mono">Member 4</span>
+              <i class="bi bi-cpu text-amber-400 text-lg"></i>
+            </div>
+            <h4 class="font-display font-bold text-base text-white">Akilan Pon Ilango</h4>
+            <p class="text-xs text-amber-300 font-medium mb-3">Machine Learning Lead</p>
+            <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+              <li>14,634 spells ML modeling</li>
+              <li>XGBoost & EBM explainability</li>
+              <li>Strict temporal validation split</li>
+              <li>Research report & task sheet design</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-stadium-950 border-t border-stadium-700/40 py-8 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <div class="font-display font-bold text-slate-300 text-sm">BeyondTheWickets Research Platform</div>
+      <p>SRM Institute of Science and Technology • Department of Big Data & Machine Learning</p>
+      <p class="text-[11px] text-slate-600">Built for Conference Paper Submission & Project Viva Evaluation • 2008–2026 IPL Seasons</p>
+    </div>
+  </footer>
+
+  <!-- ================= INTERACTIVE SIMULATOR LOGIC ================= -->
+  <script>
+    // State variables
+    let stateInnings = 2;
+    let stateCraft = 'Spin';
+
+    const tempSlider = document.getElementById('sliderTemp');
+    const rhSlider = document.getElementById('sliderRH');
+    const pitchSlider = document.getElementById('sliderPitch');
+
+    function setInnings(inn) {
+      stateInnings = inn;
+      const b1 = document.getElementById('toggleInn1');
+      const b2 = document.getElementById('toggleInn2');
+      if (inn === 1) {
+        b1.className = 'py-2 text-xs font-bold rounded-lg bg-dew text-stadium-950 transition';
+        b2.className = 'py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition';
+      } else {
+        b1.className = 'py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition';
+        b2.className = 'py-2 text-xs font-bold rounded-lg bg-dew text-stadium-950 transition';
+      }
+      runSimulation();
+    }
+
+    function setCraft(craft) {
+      stateCraft = craft;
+      const bSpin = document.getElementById('toggleCraftSpin');
+      const bPace = document.getElementById('toggleCraftPace');
+      if (craft === 'Spin') {
+        bSpin.className = 'py-2 text-xs font-bold rounded-lg bg-turf text-stadium-950 transition';
+        bPace.className = 'py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition';
+      } else {
+        bSpin.className = 'py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition';
+        bPace.className = 'py-2 text-xs font-bold rounded-lg bg-turf text-stadium-950 transition';
+      }
+      runSimulation();
+    }
+
+    tempSlider.addEventListener('input', (e) => {
+      document.getElementById('tempDisplay').innerText = parseFloat(e.target.value).toFixed(1) + '°C';
+      runSimulation();
+    });
+
+    rhSlider.addEventListener('input', (e) => {
+      document.getElementById('rhDisplay').innerText = e.target.value + '%';
+      runSimulation();
+    });
+
+    pitchSlider.addEventListener('input', (e) => {
+      document.getElementById('pitchDisplay').innerText = e.target.value + ' Matches';
+      runSimulation();
+    });
+
+    function runSimulation() {
+      const T = parseFloat(tempSlider.value);
+      const RH = parseFloat(rhSlider.value);
+      const pitchWear = parseInt(pitchSlider.value);
+
+      // Lawrence approximation for dew spread: Delta T = (100 - RH) / 5
+      const dewSpread = Math.max(0.5, (100 - RH) / 5);
+
+      document.getElementById('calcSpreadVal').innerText = dewSpread.toFixed(1) + '°C';
+
+      const pill = document.getElementById('dewRiskPill');
+      const bar = document.getElementById('spreadProgressBar');
+      const econVal = document.getElementById('simEconShift');
+      const explainer = document.getElementById('simEconExplainer');
+      const bRisk = document.getElementById('simBoundaryRisk');
+      const ctrlIdx = document.getElementById('simControlIndex');
+
+      let econPenalty = 0;
+      let boundaryPenalty = 0;
+      let controlPercentage = 85;
+
+      if (dewSpread <= 6.0) {
+        // Severe Dew Risk
+        pill.className = 'px-3 py-1 rounded-full text-xs font-bold bg-alert/20 text-alert border border-alert/40 flex items-center gap-1.5';
+        pill.innerHTML = '<span class="w-2 h-2 rounded-full bg-alert animate-ping"></span><span>Severe Dew Risk</span>';
+        bar.className = 'h-full bg-alert rounded-full transition-all duration-300';
+        bar.style.width = '25%';
+
+        if (stateCraft === 'Spin') {
+          econPenalty = (stateInnings === 2) ? 1.14 : 0.45;
+          boundaryPenalty = 22.4;
+          controlPercentage = 38;
+          explainer.innerText = "Severe Dew Alert: Wet ball suppresses finger rotation and grip. High full toss frequency and seam slippage.";
+        } else {
+          econPenalty = (stateInnings === 2) ? 0.86 : 0.35;
+          boundaryPenalty = 18.2;
+          controlPercentage = 50;
+          explainer.innerText = "Severe Dew: Pace bowlers struggle with seam presentation; death yorker control severely degraded.";
+        }
+      } else if (dewSpread <= 10.0) {
+        // Moderate Dew Risk
+        pill.className = 'px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/40 flex items-center gap-1.5';
+        pill.innerHTML = '<span class="w-2 h-2 rounded-full bg-amber-400"></span><span>Moderate Dew</span>';
+        bar.className = 'h-full bg-amber-400 rounded-full transition-all duration-300';
+        bar.style.width = '60%';
+
+        econPenalty = (stateCraft === 'Spin') ? 0.52 : 0.38;
+        boundaryPenalty = 11.5;
+        controlPercentage = 68;
+        explainer.innerText = "Moderate Dew: Outfield moisture develops; bowlers require towel drying between overs.";
+      } else {
+        // Dry / Crisp Surface
+        pill.className = 'px-3 py-1 rounded-full text-xs font-bold bg-turf/20 text-turf border border-turf/40 flex items-center gap-1.5';
+        pill.innerHTML = '<span class="w-2 h-2 rounded-full bg-turf"></span><span>Dry Crisp Surface</span>';
+        bar.className = 'h-full bg-turf rounded-full transition-all duration-300';
+        bar.style.width = '100%';
+
+        econPenalty = (pitchWear > 4 && stateCraft === 'Spin') ? -0.28 : 0.05;
+        boundaryPenalty = -4.2;
+        controlPercentage = 92;
+        explainer.innerText = "Dry Conditions: High friction surface. Pitch degradation assists spin grip and seam cutter deviation.";
+      }
+
+      // Display results
+      const sign = econPenalty >= 0 ? '+' : '';
+      econVal.innerText = `${sign}${econPenalty.toFixed(2)}`;
+      econVal.className = `font-display text-4xl font-extrabold ${econPenalty > 0.5 ? 'text-alert' : (econPenalty > 0 ? 'text-amber-300' : 'text-turf')}`;
+      bRisk.innerText = `${boundaryPenalty > 0 ? '+' : ''}${boundaryPenalty.toFixed(1)}%`;
+      ctrlIdx.innerText = `${controlPercentage}% Control`;
+    }
+
+    function toggleTableauFullscreen() {
+      const container = document.getElementById('tableauContainer');
+      if (!document.fullscreenElement) {
+        container.requestFullscreen().catch(err => alert("Fullscreen error: " + err.message));
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // Initialize Simulator
+    runSimulation();
+  </script>
+
+</body>
+</html>
